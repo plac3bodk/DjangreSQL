@@ -4,11 +4,15 @@
         <title>Doom Digital</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css"/>
-        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
         <h1>Doom Digital</h1>
-        <p>Content goes here</p>
+        {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>
